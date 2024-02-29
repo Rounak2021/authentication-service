@@ -5,6 +5,9 @@ const port = process.env.PORT || 3000;
 
 const pool = require("./database.js");
 const router = require("./Routes/Routes.js");
+// const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
+// const SwaggerUI = require('swagger-ui')
+
 
 app.use(express.json());
 app.use("/user", router);  //Route for /user endpoint of API
