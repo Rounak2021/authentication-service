@@ -1,13 +1,13 @@
 const Pool = require("pg").Pool
 
-const pool = new Pool({
+const item_store = new Pool({
     "user": "postgres",
     "host": "localhost",
-    "database": "authentication_mst",
+    "database": "storeitems_mst",
     "password": "P@ssw0rd",
     "port": "5432"
 })
 
 
 
-module.exports = pool
+module.exports = item_store

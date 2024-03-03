@@ -29,14 +29,15 @@ const login = async (req, res) => {
                         KEY
                     );
                     res.status(200).json({
-                        message: "User signed in!",
+                        message: "SUCCESS",
                         token: token,
+                        result: user[0]
                     });
                 }
                 else {
                     //Declaring the errors
                     if (result != true)
-                        res.status(400).json({
+                        res.status(200).json({
                             error: "Enter correct password!",
                         });
                 }
@@ -87,7 +88,11 @@ const register = async (req, res) => {
                         }
                         else {
                             flag = 1;
-                            res.status(200).send({ message: 'User added to database, not verified' });
+                            res.status(200).send({ 
+                                message: 'SUCCESS' ,
+                                status : "User added to database.",
+                                result: user
+                            });
                         }
                     })
                 if (flag) {
