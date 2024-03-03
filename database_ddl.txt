@@ -1,0 +1,64 @@
+storeitems_mst
+
+-- public.store_items definition
+
+-- Drop table
+
+-- DROP TABLE public.store_items;
+
+CREATE TABLE public.store_items (
+	id serial4 NOT NULL,
+	store_id varchar NOT NULL,
+	store_desc varchar NOT NULL,
+	item_validity date NOT NULL,
+	item_ssi_code varchar NOT NULL,
+	CONSTRAINT store_items_pkey PRIMARY KEY (id)
+);
+
+INSERT INTO public.store_items
+(id, store_id, store_desc, item_validity, item_ssi_code)
+VALUES(1, 'kol_01', 'Tata Puffed Rice 1 Kg', '2025-01-01', '20240203001');
+INSERT INTO public.store_items
+(id, store_id, store_desc, item_validity, item_ssi_code)
+VALUES(2, 'kol_02', 'Multigrain Cornflakes 500gm', '2026-02-01', '20240203002');
+INSERT INTO public.store_items
+(id, store_id, store_desc, item_validity, item_ssi_code)
+VALUES(3, 'kol_03', 'Sugar 1 Kg', '2025-07-24', '20240203003');
+INSERT INTO public.store_items
+(id, store_id, store_desc, item_validity, item_ssi_code)
+VALUES(4, 'kol_04', 'Rice 5 Kg', '2024-06-18', '20240203004');
+INSERT INTO public.store_items
+(id, store_id, store_desc, item_validity, item_ssi_code)
+VALUES(5, 'kol_05', 'Sunrise Garam Masala Packet 200 gms', '2024-03-29', '20240203005');
+
+
+
+
+authentication_mst
+
+-- public.users definition
+
+-- Drop table
+
+-- DROP TABLE public.users;
+
+CREATE TABLE public.users (
+	id serial4 NOT NULL,
+	"name" text NOT NULL,
+	email text NOT NULL,
+	phonenumber text NOT NULL,
+	"password" varchar NOT NULL,
+	CONSTRAINT users_email_key UNIQUE (email),
+	CONSTRAINT users_phonenumber_key UNIQUE (phonenumber),
+	CONSTRAINT users_pkey PRIMARY KEY (id)
+);
+
+INSERT INTO public.users
+(id, "name", email, phonenumber, "password")
+VALUES(1, 'test_user_3', 'abc@abh1c.com', '9831460097', '$2b$10$V0gwm6VTm2v9/P1PWs.5lO4fxAsL9F3ZWxn2iAe6yDu33BxsF9UdC');
+INSERT INTO public.users
+(id, "name", email, phonenumber, "password")
+VALUES(3, 'test_user_4', 'abc@axbh1c.com', '9831460h097', '$2b$10$jTU8m4RnASzh.1Nk1BHS6u4J29etq1yqMlFoRXdiQ3C3PpM8z7bBy');
+INSERT INTO public.users
+(id, "name", email, phonenumber, "password")
+VALUES(11, 'Rounak Chakraborty', 'rounak.chakraborty@unixdigital.in', '9831460098', '$2b$10$Azf2OYpjavpYtup1s2igbep6VpqTAtYr1m.H1GM6iWwaVWvJAVDIy');
