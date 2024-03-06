@@ -2,6 +2,7 @@ const express = require("express")
 const bcrypt = require("bcrypt");
 const pool = require("../database");
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
 const KEY = "https://jwt.io/#debugger-io?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ";
 
 
@@ -50,6 +51,9 @@ const login = async (req, res) => {
         });
     };
 }
+
+
+
 const register = async (req, res) => {
     const { name, email, phonenumber, password } = req.body;
     try {
@@ -88,11 +92,13 @@ const register = async (req, res) => {
                         }
                         else {
                             flag = 1;
-                            res.status(200).send({ 
-                                message: 'SUCCESS' ,
-                                status : "User added to database.",
+                            res.status(200).send({
+                                message: 'SUCCESS',
+                                status: "User added to database.",
                                 result: user
                             });
+
+
                         }
                     })
                 if (flag) {

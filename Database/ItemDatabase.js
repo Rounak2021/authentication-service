@@ -5,7 +5,7 @@ const item_store = new Pool({
     "host": "localhost",
     "database": "storeitems_mst",
     "password": "P@ssw0rd",
-    "port": "5432"
+    "port": "5433"
 })
 
 

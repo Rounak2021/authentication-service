@@ -90,7 +90,9 @@ const displayAllItems = async (req, res) => {
         const user = data.rows;
         if (user.length === 0) {
             res.status(200).json({
-                error: "Product not found. Please add it to database to proceed",
+                status: "200",
+                message: "SUCCESS",
+                responseObject: user,
             });
         }
         else {

@@ -5,7 +5,7 @@ const pool = new Pool({
     "host": "localhost",
     "database": "authentication_mst",
     "password": "P@ssw0rd",
-    "port": "5432"
+    "port": "5433"
 })
 
 
